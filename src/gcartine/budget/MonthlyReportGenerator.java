@@ -2,6 +2,7 @@ package gcartine.budget;
 
 import java.io.FileReader;
 import java.io.LineNumberReader;
+import java.time.YearMonth;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,8 +10,10 @@ import java.util.regex.Pattern;
 public class MonthlyReportGenerator {
 
     private static final String PATH = "C:\\Users\\Greg\\Dropbox\\YNAB\\YNAB text files\\";
-    private static final String BUDGET_FILE = PATH + "Greg s Budget as of 2024-07-16 14-48 - Budget.csv";
-    private static final String REGISTER_FILE = PATH + "Greg s Budget as of 2024-07-16 14-48 - Register.csv";
+    private static final String BUDGET_FILE = PATH + "Greg s Budget as of 2024-12-02 17-15 - Budget.csv";
+    private static final String REGISTER_FILE = PATH + "Greg s Budget as of 2024-12-02 17-15 - Register.csv";
+//    private static final String BUDGET_FILE = PATH + "Greg s Budget as of 2024-07-16 14-48 - Budget.csv";
+//    private static final String REGISTER_FILE = PATH + "Greg s Budget as of 2024-07-16 14-48 - Register.csv";
 
     public static void main(String[] args) throws Exception {
 
@@ -25,10 +28,12 @@ public class MonthlyReportGenerator {
         List<BudgetLine> budgetData = getDataFromBudgetFile();
         List<RegisterLine> registerData = getDataFromRegisterFile();
 
-        // TODO generate report data from the objects above
+        // TODO derive report data from the objects above
+        Map<YearMonth, List<Expense>> expensesByMonth = new HashMap<>();
 
-        // Report from registerData
-        //Map<String, RegisterReportLine> regRpt
+
+
+        // TODO output
 
         System.out.println("Hello World");
 
@@ -130,8 +135,7 @@ public class MonthlyReportGenerator {
 
 }
 
+// TODO z There are "AAA" todos all over this code. Find them and do them after I achieve MVP
 // AAA import the data from the two files concurrently.
-// AAA add this project to source control.
 // AAA redo this in C# and become a full microsoft programmer?
 
-// TODO this project is not backed up on DropBox or anywhere else! Make a copy!
